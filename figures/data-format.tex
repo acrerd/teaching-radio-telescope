@@ -1,0 +1,26 @@
+\documentclass[tikz, crop, convert=pdf2svg]{standalone}
+%\usepackage{tikz}
+\begin{document}
+
+\begin{tikzpicture}
+
+\begin{scope}[]
+
+  \foreach \y in {0, ..., 2, 4, ..., 5}{
+    
+    \foreach \x in {0, ..., 5, 7, ..., 11}{
+      \draw (\x,\y + 0) rectangle (\x+1,\y+1);
+    }
+    \node at (6.5,\y + 0.5) {$\cdots$};
+  }
+
+  \draw [thick, ->] (0, -0.5) -- (8, -0.5);
+  \node at (4, -1) {Frequency bin};
+
+  \draw [thick, ->] (-0.5, 0) -- (-0.5, 5);
+  \node [rotate=90] at (-1, 3) {Spectrum number};
+\end{scope}
+
+\end{tikzpicture}
+
+\end{document}
